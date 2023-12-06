@@ -1,0 +1,23 @@
+.root {
+    margin-top: 20px;
+
+    height: 180px;
+    width: 100%;
+
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.root div {
+    margin-top: 20px;
+    height: 90%;
+    width: 20%;
+    margin-right: 20%;
+    overflow: hidden;
+}
+
+.root div div {
+    width: 100%;
+    font-size: 14px;
+}
