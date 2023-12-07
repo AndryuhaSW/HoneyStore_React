@@ -12,6 +12,8 @@ const FaqItem = ({question, answer}) => {
 
     const [isOpen, setIsOpen] = useState(false)
 
+
+
     return (
         <>
 
@@ -20,12 +22,24 @@ const FaqItem = ({question, answer}) => {
                 className={styles.root}
             >
                 <h2>{question}</h2>
-                <div></div>
+
+                <CSSTransition
+                    in={isOpen}
+                    timeout={300}
+                    classNames={{
+                        enterActive: styles.button_enter_active,
+                        enterDone: styles.button_enter_done,
+                        exitActive: styles.button_exit_active,
+                        exitDone: styles.button_exit_done,
+                    }}
+                >
+                    <img draggable="false" className={styles.image} src={plus} alt=""/>
+                </CSSTransition>
             </p>
 
             <CSSTransition
                 in={isOpen}
-                timeout={300}
+                timeout={400}
                 classNames={{
                     enterActive: styles.answer_enter_active,
                     exitDone: styles.answer_exit,
@@ -34,8 +48,10 @@ const FaqItem = ({question, answer}) => {
                 }}
                 unmountOnExit
                 mountOnEnter
+
             >
-                <p className={styles.answer}>{answer}</p>
+                <div className={styles.answer}>{answer}</div>
+                {/*<p className={styles.answer}>{answer}</p>*/}
             </CSSTransition>
 
         </>
