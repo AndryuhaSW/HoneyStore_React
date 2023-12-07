@@ -15,12 +15,9 @@ function App() {
         <div className='root' >
             <Navbar visible={inView}/>
 
-            <br/>
-            <br/>
-            <hr ref={ref} />
-            <br/>
+            <br/><br/><br/><br/><hr ref={ref}/><br/>
 
-            <MainPage/>
+            <MainPage />
 
 
 

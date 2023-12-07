@@ -1,0 +1,44 @@
+.root {
+    width: 100%;
+    height: 90px;
+    margin-top: 20px;
+    border-top: 2px solid white;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    background-color: slategray;
+}
+
+
+.answer_enter {
+    opacity: 1;
+}
+.answer_enter_active {
+    animation: answer_enter_active_animation 0.3s forwards;
+}
+.answer_exit {
+    opacity: 0;
+}
+.answer_exit_active {
+    animation: answer_enter_active_animation 0.3s reverse;
+}
+@keyframes answer_enter_active_animation {
+    0%{
+        height: 0;
+        opacity: 0;
+    }
+    100%{
+        height: 90px;
+        opacity: 1;
+    }
+}
+
+
+.answer {
+    width: 100%;
+    height: 90px;
+    overflow: hidden;
+
+    background-color: teal;
+}

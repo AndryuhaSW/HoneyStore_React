@@ -4,58 +4,73 @@
     bottom: 50px;
     height: 180px;
     width: 70px;
-
-
     display: flex;
     justify-content: center;
 }
-
-
-
-
 
 
 .bigCircle{
     position: absolute;
     bottom: 0;
-
     height: 70px;
     width: 70px;
     border-radius: 50%;
-
-    /*border: 1px solid #3d1516;*/
-    background-color: #3d1516;
-
     display: flex;
     align-items: center;
     justify-content: center;
-}
 
+    background-color: rgba(61, 21, 22, 0.92);
+}
 
 .circle {
     height: 50px;
     width: 50px;
     border-radius: 50%;
-
-    /*border: 1px solid #f11716;*/
-    background-color: #f11716;
-
-
     display: flex;
     align-items: center;
     justify-content: center;
 
+    background-color: rgba(241, 23, 22, 0.66);
 }
+
+
+.bigCircle_menuActive{
+    position: absolute;
+    bottom: 0;
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: rgba(60, 62, 63, 0.61);
+}
+
+.circle_menuActive {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: rgba(214, 214, 214, 0.51);
+}
+
 
 .circle img {
     height: 30px;
     width: 30px;
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, .7), rgba(0, 0, 0, .7));
 }
 
+.circle_menuActive img {
+    height: 30px;
+    width: 30px;
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, .4), rgba(0, 0, 0, .4));
+}
 
-
-
-/**/
 
 .messenger {
     text-align: center;
@@ -67,7 +82,7 @@
 }
 
 
-/*STATES*/
+/*ПОДЪЕМ КРУЖКОВ С СОЦСЕТЯМИ*/
 .messengers_enter_active {
     animation: messengers_enter_active_animation .3s forwards;
 }
@@ -89,29 +104,18 @@
 }
 
 
-
-
-
-
-
-
-
+/*КРУГ РАЗШИРЯЕТСЯ*/
 .menu {
     width: 70px;
     height: 70px;
     border-radius: 50%;
-    border: 2px solid #3d1516;
-
+    /*border: 2px solid #3d1516;*/
+    border: 2px solid rgba(241, 23, 22, 0.67);
     position: absolute;
     bottom: -2px;
 
     animation: menu_enter_done_animation 1.6s infinite linear;
 }
-
-.menu_active {
-
-}
-
 
 @keyframes menu_enter_done_animation {
     0%{
@@ -123,5 +127,22 @@
     100%{
         transform: scale(1.5);
         opacity: 0;
+    }
+}
+
+/*ПОВОРОТ КНОПКИ МЕНЮ*/
+.menu_enter_done{
+    animation: menu_enter_active_animation .4s forwards;
+}
+.menu_exit_done{
+    animation: menu_enter_active_animation .3s reverse;
+}
+
+@keyframes menu_enter_active_animation {
+    0%{
+        transform: rotate(0);
+    }
+    100%{
+        transform: rotate(90deg);
     }
 }

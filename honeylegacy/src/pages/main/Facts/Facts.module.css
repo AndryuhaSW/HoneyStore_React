@@ -13,6 +13,11 @@
     border: 1px solid lightgray;
 }
 
+/*Поскольку root position: absolute и нужно чтобы следующий блок не накладывался на этот*/
+.buffer {
+    height: 660px;
+}
+
 .content {
     width: 90%;
     height: 70%;

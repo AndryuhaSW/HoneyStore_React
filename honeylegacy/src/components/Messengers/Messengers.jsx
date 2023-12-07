@@ -4,6 +4,7 @@ import telegram from '../../telegram.png'
 import whatsup from '../../whatsup.png'
 import messenger from "../../messager.png";
 import {CSSTransition} from "react-transition-group";
+import close from '../../close.png'
 
 const Messengers = () => {
 
@@ -27,30 +28,61 @@ const Messengers = () => {
                     <div className={styles.messenger}>
                         <div>
                             <a href="#" target="_blank">
-                                <img src={telegram} alt="telegram"/>
+                                <img draggable="false" src={telegram} alt="telegram"/>
                             </a>
                         </div>
                         <div>
                             <a href="#" target="_blank">
-                                <img src={whatsup} alt="whatsup"/>
+                                <img draggable="false" src={whatsup} alt="whatsup"/>
                             </a>
                         </div>
                     </div>
                 </CSSTransition>
 
 
+
+
+
+
+
                 <div
-                    className={!menuActive ? styles.menu : styles.menu_active}
+                    className={!menuActive ? styles.menu : ''}
                 ></div>
 
                 <div
-                    className={styles.bigCircle}
+                    className={menuActive ? styles.bigCircle_menuActive : styles.bigCircle}
                     onClick={() => setMenuActive(!menuActive)}
                 >
-                    <div className={styles.circle}>
-                        <img src={messenger} alt=""/>
+                    <div className={menuActive ? styles.circle_menuActive : styles.circle}>
+                        <CSSTransition
+                            in={menuActive}
+                            classNames={{
+                                enterDone: styles.menu_enter_done,
+                                exitDone: styles.menu_exit_done
+                            }}
+                        >
+                            {menuActive
+                                ?<img draggable="false" src={close} alt=""/>
+                                :<img draggable="false" src={messenger} alt=""/>
+                            }
+                        </CSSTransition>
                     </div>
                 </div>
+
+
+
+                {/*<div*/}
+                {/*    className={!menuActive ? styles.menu : styles.menu_active}*/}
+                {/*></div>*/}
+
+                {/*<div*/}
+                {/*    className={menuActive ? styles.bigCircle_menuActive : styles.bigCircle}*/}
+                {/*    onClick={() => setMenuActive(!menuActive)}*/}
+                {/*>*/}
+                {/*    <div className={menuActive ? styles.circle_menuActive : styles.circle}>*/}
+                {/*        <img draggable="false" src={messenger} alt=""/>*/}
+                {/*    </div>*/}
+                {/*</div>*/}
 
             </div>
 

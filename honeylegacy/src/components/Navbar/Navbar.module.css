@@ -2,8 +2,9 @@
 .navbar_visible {
     z-index: 3000;
 
-    position: relative;
-    width: 100%;
+    top: 0;
+    position: absolute;
+    width: 1200px;
     height: 50px;
     display: flex;
 
